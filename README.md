@@ -23,7 +23,7 @@ Immunization is a key tool in managing the spread of influenza, and as demonstra
 * Evaluate the model and provide actionable insights to improve public health vaccination strategies.
 
 
-### Read Me: Model Evaluation and Recommendation
+### Model Evaluation and Recommendation
 
 This document summarizes the evaluation of three machine learning models—**Logistic Regression**, **Decision Tree Classifier**, and **Random Forest Classifier**—for predicting vaccination status. The models were assessed using key metrics such as **accuracy**, **precision**, **recall**, **F1 score**, and **AUC-ROC**.
 
