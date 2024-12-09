@@ -36,14 +36,14 @@ Immunization is a key tool in managing the spread of influenza, and as demonstra
 
 Model Evaluation
 Logistic Regression:
-
 Accuracy: 75.49% (Good but not optimal for imbalanced data).
 Precision: 0.74 (class 0), 0.77 (class 1) – below the target of 80%.
 Recall: 0.78 (class 0), 0.73 (class 1) – misses some true positive cases.
 F1 Score: 0.76 for both classes – moderate balance between precision and recall.
 AUC-ROC: 0.828 – performs reasonably well in distinguishing between classes.
-Decision Tree:
 
+
+Decision Tree:
 Accuracy: 82.84% (Excellent performance).
 Precision: 0.79 (class 0), 0.87 (class 1) – surpasses the target for class 1.
 Recall: 0.89 (class 0), 0.77 (class 1) – strong overall but slightly below target for class 1.
