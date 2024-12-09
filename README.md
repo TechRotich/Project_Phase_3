@@ -1,5 +1,3 @@
-# Project_Phase_3
-
 ### README: Exploring Determinants of H1N1 Vaccine Uptake - A Data-Driven Public Health Approach Using Classification Models
 
 #### Overview
@@ -25,29 +23,43 @@ Immunization is a key tool in managing the spread of influenza, and as demonstra
 * Evaluate the model and provide actionable insights to improve public health vaccination strategies.
 
 
-4. **Metrics for Success**
-   - **Accuracy**: The proportion of correct predictions for vaccination status.
-   - **Precision**: The ability to correctly identify vaccinated individuals.
-   - **Recall (Sensitivity)**: The model’s ability to identify all vaccinated individuals.
-   - **F1 Score**: A balance between precision and recall, useful in the case of imbalanced datasets.
-   - **Area Under the ROC Curve (AUC-ROC)**: The model's overall ability to differentiate between vaccinated and unvaccinated individuals.
-  
-   - This project explores predictive modeling using logistic regression and decision tree classifiers. The goal is to predict vaccination status effectively, using key evaluation metrics like accuracy, precision, recall, F1 score, and AUC-ROC. Here is a summary of the findings:
+### Read Me: Model Evaluation and Recommendation
 
-Model Evaluation
-Logistic Regression:
-Accuracy: 75.49% (Good but not optimal for imbalanced data).
-Precision: 0.74 (class 0), 0.77 (class 1) – below the target of 80%.
-Recall: 0.78 (class 0), 0.73 (class 1) – misses some true positive cases.
-F1 Score: 0.76 for both classes – moderate balance between precision and recall.
-AUC-ROC: 0.828 – performs reasonably well in distinguishing between classes.
+This document summarizes the evaluation of three machine learning models—**Logistic Regression**, **Decision Tree Classifier**, and **Random Forest Classifier**—for predicting vaccination status. The models were assessed using key metrics such as **accuracy**, **precision**, **recall**, **F1 score**, and **AUC-ROC**.
 
+#### Model Performance Summary:
 
-Decision Tree:
-Accuracy: 82.84% (Excellent performance).
-Precision: 0.79 (class 0), 0.87 (class 1) – surpasses the target for class 1.
-Recall: 0.89 (class 0), 0.77 (class 1) – strong overall but slightly below target for class 1.
-F1 Score: 0.84 (class 0), 0.82 (class 1) – good balance and exceeds target.
-AUC-ROC: 0.896 – outstanding ability to distinguish between classes.
-Conclusion
-The decision tree outperforms logistic regression across all evaluation metrics, making it the preferred model for this dataset. Further optimization of logistic regression could improve its performance, especially for imbalanced datasets.
+- **Logistic Regression:**
+  - **Accuracy**: 0.75 (Within acceptable range but not exceptional)
+  - **Precision**: 0.77 (Below target, indicating some false positives)
+  - **Recall**: 0.73 (Indicating missed vaccinated individuals)
+  - **F1 Score**: 0.75 (Balanced but can be improved)
+  - **AUC-ROC Score**: 0.828 (Close to the benchmark but room for improvement)
+  - **Conclusion**: Performs moderately well but struggles with class imbalance. Not the best option for high precision and recall.
+
+- **Decision Tree Classifier:**
+  - **Accuracy**: 0.83 (Above benchmark)
+  - **Precision (Class 1)**: 0.87 (Strong precision for vaccinated individuals)
+  - **Recall**: 0.83 (Good balance)
+  - **F1 Score**: 0.83 (Good overall balance)
+  - **AUC-ROC Score**: 0.896 (Exceeds 0.85 benchmark, strong separability between classes)
+  - **Conclusion**: Strong performance with a good balance between precision, recall, and accuracy. The best model overall for identifying vaccinated individuals.
+
+- **Random Forest Classifier:**
+  - **Accuracy**: 0.83 (Solid performance)
+  - **Precision (Class 1)**: 0.69 (Indicating many false positives for the vaccinated class)
+  - **Recall**: 0.38 (Low recall for vaccinated individuals, critical issue)
+  - **F1 Score**: 0.81 (Weighed down by low recall for Class 1)
+  - **AUC-ROC Score**: 0.800 (Below the 0.85 benchmark)
+  - **Conclusion**: While offering good precision for one class, Random Forest struggles with recall for the vaccinated class, leading to a significant number of false negatives.
+
+#### Recommended Model:
+
+- **Decision Tree Classifier** is the best choice. It provides a strong balance across key metrics and performs well in identifying vaccinated individuals while minimizing false positives and negatives. The AUC-ROC score of 0.896 is particularly notable, demonstrating excellent class separation.
+
+#### Next Steps:
+- **Hyperparameter tuning**: Further optimize the Decision Tree and Random Forest models for better performance.
+- **Explore Gradient Boosting or XGBoost**: These models could potentially improve performance.
+- **Feature Engineering**: Enhance model performance by creating or modifying features that better capture key relationships.
+- **Model Interpretability**: Use tools like SHAP or LIME to understand feature importance.
+- **Deployment and Monitoring**: Deploy the chosen model and continuously monitor and retrain to ensure its accuracy over time.
